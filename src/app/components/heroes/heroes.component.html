@@ -1,0 +1,99 @@
+
+<p-panel header="Heroes">
+
+    <div class="grid">
+        <div class="col-12 md:col-3 sm:col-3 lg:col-4" *ngFor="let heroe of heroes">
+            <p-panel header="{{heroe.superhero | uppercase}}" > 
+                <p-card >
+                    <ng-template pTemplate="header">
+                        <a routerLink="heroe/{{heroe.id}}">
+                        <img  alt="Card" [src]="heroe | imagen" />
+                        </a>
+                    </ng-template>
+                    
+                        <b>Publicado:</b> {{heroe.publisher}}<br> 
+                        <b>Primera Aparicion:</b>{{heroe.first_appearance}}<br>
+                        <b>Identidad:</b>{{heroe.characters}}
+                    
+                    <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-pencil" (onClick)="obtenerHeroe(heroe.id)" title="Editar"></p-button>
+                        <p-button icon="pi pi-trash" (onClick)="eliminarHeroe(heroe.id)" title="Eliminar" styleClass="p-button-danger" [style]="{ 'margin-left': '.5em' }"></p-button>
+                        
+                    </ng-template>
+                </p-card>
+                </p-panel>
+
+        </div>
+        
+    </div>
+
+
+</p-panel>
+
+<p-dialog header="Formulario" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    
+    
+    <p-panel header="Agregar Heroe">
+    
+        <div class="grid">
+    
+            <div class="col-12  sm:col-6 lg:col-6">
+    
+                <span class="p-float-label">
+                    <input pInputText  style="width: 100%;" [(ngModel)]="hero.superhero" />
+                    <label >Superheroe</label>
+                </span>
+            
+                <span class="p-float-label mt-5">
+                    <input pInputText style="width: 100%;" [(ngModel)]="hero.alter_ego" />
+                    <label >Alter Ego</label>
+                </span>
+    
+                <span class="p-float-label mt-5">
+                    <input pInputText style="width: 100%;" [(ngModel)]="hero.first_appearance" />
+                    <label >Primera aparicion</label>
+                </span>
+    
+                <span class="p-float-label mt-5" >
+                    <p-dropdown [options]="publishers" [(ngModel)]="hero.publisher" optionLabel="desc"  placeholder="Creador"></p-dropdown>
+                </span>
+                
+                <span class="p-float-label mt-5">
+                    <input pInputText style="width: 100%;" [(ngModel)]="hero.characters" />
+                    <label >Personaje</label>
+                </span>
+                
+    
+                <span class="p-float-label mt-5">
+                
+                    <textarea id="float-input" [(ngModel)]="hero.description" style="width: 100%;" placeholder="descripcion" rows="5" cols="30" pInputTextarea></textarea>
+                  
+                </span>
+    
+                <span class="p-float-label mt-5">
+                    <input pInputText style="width: 100%;" [(ngModel)]="hero.alt_img" />
+                    <label >img URL</label>
+                </span>
+                
+                <span class="p-float-label mt-3">
+                    <p-button (onClick)="editarHeroe()" label="Guardar" icon="pi pi-check"></p-button>
+                </span>
+    
+            </div>
+    
+            <div class="col-12 sm:col-6 lg:col-6">
+            
+            <p-card class="flex justify-content-center" >
+                
+                <img [src]="hero | imagen" width="150">
+    
+            </p-card>
+            </div>
+    
+        </div>
+        
+       
+    </p-panel>
+    
+    </p-dialog>
+    

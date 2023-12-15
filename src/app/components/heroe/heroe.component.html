@@ -1,0 +1,33 @@
+
+<div class="grid mt-3">
+    <div class="col-12 md:col-6 sm:col-6 lg:col-6" >
+        <p-panel header="{{hero.superhero | uppercase}}" >     
+        <p-card>
+            <ng-template pTemplate="header">
+            
+                <img [src]="hero | imagen" />
+                
+            </ng-template>
+         
+        </p-card>
+       </p-panel>    
+    </div>
+   
+    <div class="col-12 md:col-6 sm:col-6 lg:col-6" >
+        <p-panel header="{{hero.superhero | uppercase}}" > 
+            <p-card >
+                
+                    <b>Publicado: </b> {{hero.publisher}}<br> 
+                    <b>Primera Aparicion: </b>{{hero.first_appearance}}<br>
+                    <b>Identidad: </b>{{hero.characters}}<br><br>
+                    <b>Descripcion: </b>{{hero.description}}<br><br>
+                    <p-button class="mt-3" icon="pi pi-arrow-circle-left" title="Regresar" styleClass="p-button-danger" routerLink="/"></p-button>
+                
+               
+            </p-card>
+           
+            </p-panel>
+
+    </div>
+    
+</div>
