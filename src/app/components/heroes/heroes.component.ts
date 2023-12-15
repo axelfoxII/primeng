@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Heroes,Publisher } from '../interfaces/heroes.interface';
 import { MenuItem} from 'primeng/api'
@@ -30,7 +30,7 @@ export class HeroesComponent implements OnInit {
 
   }
 
-  constructor(private heroesSvc:HeroesService){}
+  constructor(private heroesSvc:HeroesService, private cdr: ChangeDetectorRef){}
   
   
   
@@ -115,12 +115,13 @@ this.showDialog();
 
 obtenerHeroe(id:any){
 
-  this.showDialog();
+ 
   
   this.heroesSvc.heroeById(id).subscribe(res=>{
 
     this.hero = res;
-    //console.log(this.hero)
+    this.cdr.detectChanges(); // Forzar la actualización de la vista
+    this.showDialog();
 
   })
 
