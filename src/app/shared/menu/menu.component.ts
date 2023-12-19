@@ -67,7 +67,7 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-users',
             items:[
               {
-                label: 'Agegar Heroes',
+                label: 'Agregar Heroes',
                 icon: 'pi pi-user-plus',
                 command: () => this.handleItemClick('Inicio')
               },
@@ -123,6 +123,9 @@ this.formGroup.reset();
 
 }
 
+
+
+/* DIALOG */
 visible: boolean = false;
 
 showDialog() {
