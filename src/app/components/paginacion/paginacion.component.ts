@@ -13,10 +13,6 @@ export class PaginacionComponent implements OnInit {
 
   heroes:Heroes[]=[];
 
-  loading: boolean = true;
-
-  activityValues: number[] = [0, 100];
-
   constructor(private heroeSvc:HeroesService){}
   
   
@@ -24,8 +20,7 @@ export class PaginacionComponent implements OnInit {
 
     this.heroeSvc.heroes().subscribe(res=>{
 
-      this.heroes=res;
-      this.loading = false;
+      this.heroes=res;  
       
 
     })
