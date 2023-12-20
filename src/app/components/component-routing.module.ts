@@ -8,13 +8,13 @@ import { PaginacionComponent } from './paginacion/paginacion.component';
 const routes: Routes = [
 
   {
-    path:'', component:HeroesComponent  
+    path:'', component:HeroesComponent, data:{titulo:'home'}  
   },
   {
-    path:'heroe/:id', component:HeroeComponent  
+    path:'heroe/:id', component:HeroeComponent, data:{titulo:'heroe'}  
   },
   {
-    path:'paginacion', component:PaginacionComponent  
+    path:'paginacion', component:PaginacionComponent, data:{titulo:'pagination'}  
   },
 
   {

@@ -40,7 +40,7 @@ export class HeroesService {
   actualizarHeroe(heroe:Heroes):Observable<Heroes>{
 
     console.log(heroe)
-    return this.http.put<Heroes>(`http://localhost:3000/heroes/${heroe.id}`,heroe);
+    return this.http.patch<Heroes>(`http://localhost:3000/heroes/${heroe.id}`,heroe);
 
 
   }

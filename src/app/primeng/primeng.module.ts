@@ -12,6 +12,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 
 
@@ -31,7 +32,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
   DialogModule, 
   InputTextModule,
   DropdownModule, 
-  SelectButtonModule
+  SelectButtonModule,
+  BreadcrumbModule
   
   ]
 })

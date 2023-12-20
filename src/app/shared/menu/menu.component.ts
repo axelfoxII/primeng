@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
   menuItems: MenuItem[] = [];
 
 
-  filteredHeroes!: any[];
+  filteredHeroes!: Heroes[];
 
     constructor(private heroeSvc: HeroesService, private router:Router) {
       

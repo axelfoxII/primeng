@@ -11,24 +11,22 @@ import { Table } from 'primeng/table';
 })
 export class PaginacionComponent implements OnInit {
 
-  heroes:Heroes[]=[];
+  title = 'pagination';
+  heroes: Heroes[] = [];
 
-  constructor(private heroeSvc:HeroesService){}
-  
-  
+  constructor(private heroeSvc: HeroesService) { }
+
+
   ngOnInit() {
 
-    this.heroeSvc.heroes().subscribe(res=>{
+    this.heroeSvc.heroes().subscribe(res => {
 
-      this.heroes=res;  
-      
+      this.heroes = res;
+
 
     })
-    
+
   }
 
-  clear(table: Table) {
-    table.clear();
-}
-
+ 
 }

@@ -10,17 +10,17 @@ import { Heroes } from '../interfaces/heroes.interface';
   ]
 })
 export class HeroeComponent implements OnInit {
-  
-  hero!:Heroes;
-  constructor(private heroeSvc:HeroesService, private activatedRoute:ActivatedRoute){}
-  
+  title = 'heroe';
+  hero!: Heroes;
+  constructor(private heroeSvc: HeroesService, private activatedRoute: ActivatedRoute) { }
+
   ngOnInit() {
-    
-    this.activatedRoute.params.subscribe(({id})=>{
-      this.heroeSvc.heroeById(id).subscribe(res=>{
-        
-        this.hero=res;
-     
+
+    this.activatedRoute.params.subscribe(({ id }) => {
+      this.heroeSvc.heroeById(id).subscribe(res => {
+
+        this.hero = res;
+
       })
     });
 
